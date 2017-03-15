@@ -29,12 +29,18 @@ Blogger এর আছে বিশেষ `<b:if>` এবং `<b:else/>` tags.
 
 Show content only on item page (every single post):
 
+প্রতিটি Post এর জন্য যা দেখানো হবে তাঃ
+
 ```
-<b:if cond='data:blog.pageType == "item"'>...content...</b:if>
+<b:if cond='data:blog.pageType == "item"'>...content এখানে হবে...</b:if>
 ```
 
 ### STATIC
+
 Show content only on static page(s):
+
+static page এ যা দেখানো হবে তাঃ
+
 ```
 <b:if cond='data:blog.pageType == "static_page"'>...content...</b:if>
 ```
@@ -42,6 +48,8 @@ Show content only on static page(s):
 ### INDEX
 
 Show content only on index page (sorted by label and date):
+
+Label ও date এর ক্রমানুসারে সাজানো index page এ যা দেখানো হবে তাঃ
 
 ```
 <b:if cond='data:blog.pageType == "index"'>...content...</b:if>
@@ -60,6 +68,8 @@ change the [YOUR_LABEL] with your own label.
 
 Show content only on archive page (your blogroll — sorted by date):
 
+Date এর ক্রমানুসারে সাজানো Blogroll এর কেবল archive page এ যা প্রদর্শিত হবে তাঃ
+
 ```
 <b:if cond='data:blog.pageType == "archive"'>...content...</b:if>
 ```
@@ -74,6 +84,8 @@ Also, change the [your_blog_url] with your actual blog URL.
 ### HOMEPAGE
 
 Show content only on homepage URL of the blog:
+
+homepage URL লিংক এ যা প্রদর্শিত হবে তাঃ
 
 ```
 <b:if cond='data:blog.url == data:blog.homepageUrl'>...content...</b:if>
