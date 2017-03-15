@@ -1,14 +1,28 @@
 # Blogger Conditional Tag — b:if and b:else
 
 Blogger Conditional Tag এর সাথে পরিচিত হোন
+
 Blogger এর আছে বিশেষ `<b:if>` এবং `<b:else/>` tags.
 
 `<b:if>` ও `<b:else/>` কাজ করবে শুধুমাত্র XHTML এ করা কোনো Blogger blog এ।
+
 এমনকি Layout এর মাধ্যমে HTML/JS widget দিয়েও এটি করা যাবে না।
 
-## Getting Started
+## List of `<b:if>` conditions
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+* Item
+* Static
+* Index
+* Archive
+* Homepage
+* Specific URL
+* Error Page
+* Backlink
+* Display Name
+* Number of Comments
+* Jump Link
+* Commenting Enabled
+* Others
 
 ### Prerequisites
 
@@ -60,7 +74,7 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
+
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
