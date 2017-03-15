@@ -24,55 +24,164 @@ Blogger এর আছে বিশেষ `<b:if>` এবং `<b:else/>` tags.
 * Commenting Enabled
 * Others
 
-### Prerequisites
 
-What things you need to install the software and how to install them
+### ITEM
 
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Show content only on item page (every single post):
 
 ```
-Give the example
+<b:if cond='data:blog.pageType == "item"'>...content...</b:if>
 ```
 
-And repeat
-
+### STATIC
+Show content only on static page(s):
 ```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+<b:if cond='data:blog.pageType == "static_page"'>...content...</b:if>
 ```
 
-### And coding style tests
+### INDEX
 
-Explain what these tests test and why
+Show content only on index page (sorted by label and date):
 
 ```
-Give an example
+<b:if cond='data:blog.pageType == "index"'>...content...</b:if>
 ```
 
-## Deployment
+```
+For instance, try this URL pattern:
+[your_blog_url]/search/label/[YOUR_LABEL]
+It will show your post(s) list with a particular [YOUR_LABEL] label.
 
-Add additional notes about how to deploy this on a live system
+change the [your_blog_url] with your own blog URL, such as: mysupersweetblog.blogspot.com or your custom domain blog URL.
+change the [YOUR_LABEL] with your own label.
+```
+
+### ARCHIVE
+
+Show content only on archive page (your blogroll — sorted by date):
+
+```
+<b:if cond='data:blog.pageType == "archive"'>...content...</b:if>
+```
+
+```
+For instance, try this URL pattern:
+[your_blog_url]/2014/11
+It will show your post(s) list you wrote in November ( 11 ) of 2014.
+Also, change the [your_blog_url] with your actual blog URL. 
+```
+
+### HOMEPAGE
+
+Show content only on homepage URL of the blog:
+
+```
+<b:if cond='data:blog.url == data:blog.homepageUrl'>...content...</b:if>
+```
+
+### SPECIFIC URL
+
+Show content only on a specific URL on the blog:
+
+```
+<b:if cond='data:blog.url == "specific-URL-on-the-blog"'>...content...</b:if>
+```
+
+We need to put complete URL and protocol for that, such as:
+
+```
+http://mysupersweetblog.blogspot.com/2002/01/hello_hoho.html
+```
+
+Do not use relative URL, like just /2002/01/hello_hoho.html. 
+
+### ERROR PAGE
+
+Show content on the error page of the blog (404 - not found page):
+
+```
+<b:if cond='data:blog.pageType == "error_page"'>...404 note content...</b:if>
+```
+
+There's the predefined elements and styling provided by Blogger for that.
+
+They're the elements starting with class name `status-msg-`.
+
+You can search them on your XHTML.
+
+But, if you wanna modify the custom error page, use that conditional statement to make the additional element(s)/CSS/JS appear/run only for that criteria. 
+
+### BACKLINK
+
+Show content only on post(s) which is/are showing backlink:
+
+```
+<b:if cond='data:post.showBacklinks'>...content...</b:if>
+```
+
+### DISPLAY NAME
+
+Show content only on post(s) which is/are showing specific display name (such as the post's author):
+
+```
+<b:if cond='data:displayname == "specific-name"'>...content...</b:if>
+```
+
+
+### NUMBER OF COMMENTS
+
+Show content only on post(s) which has/have specific number of comment(s):
+
+```
+<b:if cond='data:post.numComments == [number_here]'>...content...</b:if>
+```
+
+### JUMP LINK
+
+Show content only on post(s) which has/have jump link (the "read more" link):
+
+```
+<b:if cond='data:post.hasJumpLink'>...content...</b:if>
+```
+
+### COMMENTING ENABLED
+
+Show content only on post(s) which is/are comment enabled:
+
+```
+<b:if cond='data:post.allowComments'>...content...</b:if>
+```
+
+### OTHERS
+
+There are plenty other of conditions. But they're "deeper", sort of speak.
+
+These are some of them:
+
+```
+<b:if cond='data:blog.metaDescription'>
+<b:if cond='data:mobile'>
+<b:if cond='data:title'> or <b:if cond='data:title != ""'>
+<b:if cond='data:showThumbnails == "false/true"'>
+<b:if cond='data:showSnippets == "false/true"'>
+<b:if cond='data:post.thumbnail'>
+<b:if cond='data:display == "list"'>
+<b:if cond='data:blog.url == data:label.url'>
+<b:if cond='data:showFreqNumbers'>
+<b:if cond='data:useImage'>
+```
+
+Plus others...
+
+
+
+
+
+
+
+
+
+
 
 
 
